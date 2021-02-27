@@ -6,7 +6,7 @@ gen_err = "something went wrong."
 
 import logging, os
 
-DEBUG = os.getenv('ENVIRONMENT') == 'TEST'
+DEBUG = os.getenv('ENVIRONMENT') == 'DEV'
 HOST = os.getenv('APP_HOST')
 PORT = int(os.getenv('APP_PORT', 3000))
 
