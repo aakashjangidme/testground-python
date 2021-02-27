@@ -3,7 +3,8 @@ import pymysql as msql
 import logging
 import sys
 import pandas as pd
-from src.config import DB_CONFIG
+import app as app
+from flask import current_app as app
 
 
 # Join log
@@ -29,6 +30,7 @@ logger.setLevel(logging.INFO)
 class Dbclient:
     def __init__(self):
         super().__init__()
+        DB_CONFIG = app.config['DB_CONFIG']
         self.host = DB_CONFIG['host']
         self.user = DB_CONFIG['user']
         self.passw = DB_CONFIG['pass']
@@ -42,7 +44,7 @@ class Dbclient:
     def __connect__(self):
         try:
             self.conn = msql.connect(
-              host =   self.host, user =  self.user, passwd =  self.passw, db =   self.db, port =  self.port, charset=self.charset)
+              host = self.host, user =  self.user, passwd =  self.passw, db =   self.db, port =  self.port, charset=self.charset)
             self.curr = self.conn.cursor()
 
         except Exception as e:

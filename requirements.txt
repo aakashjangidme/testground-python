@@ -2,3 +2,4 @@ flask
 pandas
 pymysql
 python-dotenv
+gunicorn

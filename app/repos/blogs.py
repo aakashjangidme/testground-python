@@ -1,18 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import src.database.dbclient as db
-import src.config as config
+import app.helpers.dbclient as db
 import json
 
-
 class Blogs:
+
+    """blogs repository"""
 
     def __init__(self):
         super().__init__()
         self.db = db.Dbclient()
 
     def __str__(self):
-        return super().__str__(__name__)
+        return super().__str__('blogs_class')
 
     def get_all_blogs(self):
         qry = """
