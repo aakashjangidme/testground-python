@@ -36,7 +36,7 @@ DB_URI = None
 
 
 logging.basicConfig(
-    filename=os.getenv("SERVICE_LOG", "server.log"),
+    filename=os.getenv("SERVICE_LOG", "logs/server.log"),
     level=logging.DEBUG,
     format="%(levelname)s: %(asctime)s \
         pid:%(process)s module:%(module)s %(message)s",
