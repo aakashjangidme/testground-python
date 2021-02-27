@@ -1,8 +1,6 @@
 from flask import Flask, Blueprint
 
 
-
-
 def create_app():
     try:
         app = Flask(__name__)

@@ -31,6 +31,7 @@ class Dbclient:
     def __init__(self):
         super().__init__()
         DB_CONFIG = app.config['DB_CONFIG']
+        logger.info(DB_CONFIG)
         self.host = DB_CONFIG['host']
         self.user = DB_CONFIG['user']
         self.passw = DB_CONFIG['pass']

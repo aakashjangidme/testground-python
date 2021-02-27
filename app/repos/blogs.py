@@ -10,6 +10,7 @@ class Blogs:
     def __init__(self):
         super().__init__()
         self.db = db.Dbclient()
+        print(self.db)
 
     def __str__(self):
         return super().__str__('blogs_class')

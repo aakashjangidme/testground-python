@@ -43,7 +43,6 @@ class DevConfig(Config):
     }  
 
 
-
 class ProdConfig(Config):
     SECRET = 'prod-secret-key'
     pass
