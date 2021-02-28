@@ -28,15 +28,14 @@ logger.setLevel(logging.INFO)
 
 
 class Dbclient:
-    DB_CONFIG = app.config['DB_CONFIG']
     def __init__(self):
-        super().__init__()
-        logger.info(DB_CONFIG)
-        self.host = DB_CONFIG['host']
-        self.user = DB_CONFIG['user']
-        self.passw = DB_CONFIG['pass']
-        self.port = DB_CONFIG['port']
-        self.db = DB_CONFIG['db']
+        self.DB_CONFIG = app.config['DB_CONFIG'] 
+        print(self.DB_CONFIG)
+        self.host = self.DB_CONFIG['host']
+        self.user = self.DB_CONFIG['user']
+        self.passw = self.DB_CONFIG['pass']
+        self.port =self. DB_CONFIG['port']
+        self.db = self.DB_CONFIG['db']
         self.charset = 'utf8'
         self.conn = None
         self.curr = None
@@ -86,6 +85,6 @@ class Dbclient:
             self.__disconnect__()
 
     def __str__(self):
-        return super().__str__(__name__)
+        return 'db_client'
   
 

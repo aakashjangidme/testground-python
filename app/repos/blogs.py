@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import app.helpers.dbclient as db
+import app.helpers.dbclient as dbb
 import json
 
 class Blogs:
@@ -9,10 +9,12 @@ class Blogs:
 
     def __init__(self):
         super().__init__()
-        self.db = db.Dbclient()
+        self.db = dbb.Dbclient()
+        print('[class blog] database connected', self.db)
+
 
     def __str__(self):
-        return super().__str__('blogs_class')
+        return 'class_blog'
 
     def get_all_blogs(self):
         qry = """
