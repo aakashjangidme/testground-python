@@ -28,9 +28,9 @@ logger.setLevel(logging.INFO)
 
 
 class Dbclient:
+    DB_CONFIG = app.config['DB_CONFIG']
     def __init__(self):
         super().__init__()
-        DB_CONFIG = app.config['DB_CONFIG']
         logger.info(DB_CONFIG)
         self.host = DB_CONFIG['host']
         self.user = DB_CONFIG['user']

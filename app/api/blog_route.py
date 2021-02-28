@@ -7,8 +7,8 @@ blog_route = Blueprint('blog_route', __name__)
 @blog_route.route('/', methods=['GET'])
 def index():
     try:
-        print('CURRENT_SECRET', app.config['SECRET'])
         object = Blogs()
+        print(object)
         _all_blogs = object.get_all_blogs()
         return _all_blogs, 200
     except Exception as e:
